@@ -11,8 +11,11 @@ import GoogleMaps
 
 class ViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("test")
+        
         // Do any additional setup after loading the view, typically from a nib.
         let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
                                                           longitude: 151.20, zoom: 6)
