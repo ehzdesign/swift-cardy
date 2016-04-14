@@ -40,14 +40,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
 //        marker.snippet = "Australia"
 //        marker.map = mapView
         
-        //*********** map ***********//
-        
-        
-        
-        //*********** scroll size ***********//
-        //scrollView.contentSize = CGRect(width: 200, height: 200 * card.count)
-        //scrollView.contentSize = CGRect(x: 0, y: 0, width: 100, height: 100)
-       // scrollView.delegate = self
+        //*********** map end ***********//
     
         
        
@@ -69,15 +62,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
                 
             }
             
-            //scroll view size
+            //*********** scroll view size ***********//
     
 //            scrollView.contentSize = CGSize(width: scrollViewWidth, height: 235 * albumImages.count)
 //        scrollView.contentSize = CGSize(width: Int(scrollView.frame.width), height: 235 * albumImages.count)
-        scrollView.contentSize = CGSize(width: Int(scrollView.frame.width), height: 235 * albumImages.count)
-            scrollView.delegate = self
+       
+//        scrollView.contentSize = CGSize(width: Int(scrollView.frame.width), height: 235 * albumImages.count)
+        scrollView.delegate = self
         print(scrollView.frame.width)
-        
         print(scrollView.contentSize)
+        
+        //*********** scroll view size end ***********//
             
             
         }// viewdidload end
@@ -88,7 +83,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
             print(sender.albumImageName) //print name of album
             
             UIView.animateWithDuration(0.5, animations: {
-                sender.backgroundImage.alpha = 0.4
+                //sender.backgroundImage.alpha = 0.8
             })
             
         }
