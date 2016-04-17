@@ -22,7 +22,9 @@ class Card: UIView {
     
     var albumImageName = ""
     
-    let shadowView = UIView(frame: CGRectMake(50, 50, 100, 100))
+    var cardNameLabel = UILabel(frame: CGRectMake(0, 0, 100, 20))
+    
+    var cardPrice = UILabel(frame: CGRectMake(0, 0, 50, 20))
     
     var count:Double = 0
     func setup(backgroundImageName:String){
@@ -61,8 +63,17 @@ class Card: UIView {
         
 //               self.layer.shouldRasterize = true
         
-        //add rounded edge on view
-        self.layer.cornerRadius = 10
+        
+        
+        cardNameLabel.frame.origin = CGPoint(x: 15, y: 20)
+        cardNameLabel.textAlignment = NSTextAlignment.Center
+        cardNameLabel.text = "Test label"
+        cardNameLabel.backgroundColor = UIColor.blueColor()
+    
+        cardPrice.frame.origin = CGPoint(x: 290, y: 20)
+        cardPrice.textAlignment = NSTextAlignment.Center
+        cardPrice.text = "$$$"
+        cardPrice.backgroundColor = UIColor.orangeColor()
         
         albumImageName = backgroundImageName
         
@@ -77,7 +88,8 @@ class Card: UIView {
         
         self.addSubview(backgroundImage)
         self.clipsToBounds = true
-        
+        self.backgroundImage.addSubview(cardNameLabel)
+        self.backgroundImage.addSubview(cardPrice)
         
 }
     
