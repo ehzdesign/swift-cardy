@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  cardy
@@ -21,6 +22,37 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        let addCard = UIButton(type: UIButtonType.System) as UIButton
+        addCard.frame = CGRectMake(-0, 600, 100, 50)
+        addCard.backgroundColor = UIColor.greenColor()
+        addCard.setTitle("Add Card", forState: UIControlState.Normal)
+        addCard.addTarget(self, action: "addCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        let search = UIButton(type: UIButtonType.System) as UIButton
+        search.frame = CGRectMake(115, 600, 100, 50)
+        search.backgroundColor = UIColor.greenColor()
+        search.setTitle("Search", forState: UIControlState.Normal)
+        search.addTarget(self, action: "searchAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        
+        let viewCards = UIButton(type: UIButtonType.System) as UIButton
+        viewCards.frame = CGRectMake(230, 600, 100, 50)
+        viewCards.backgroundColor = UIColor.greenColor()
+        viewCards.setTitle("View Card", forState: UIControlState.Normal)
+        viewCards.addTarget(self, action: "viewCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+ 
+        self.view.addSubview(addCard)
+        self.view.addSubview(search)
+        self.view.addSubview(viewCards)
+        
+        
         
         //*********** map ***********//
         
@@ -54,7 +86,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
                 newAlbum.setup(albumImage)
                 scrollView.addSubview(newAlbum)
                 albums.append(newAlbum)
-                count+=1;
+                count += 1;
                 
                 print("card size:\(newAlbum.frame.width)")
                 
@@ -62,7 +94,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
                 
             }
             
-            //*********** scroll view size ***********//
+        //*********** scroll view size ***********//
     
 //            scrollView.contentSize = CGSize(width: scrollViewWidth, height: 235 * albumImages.count)
         
@@ -72,7 +104,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         print(scrollView.contentSize)
         
         //*********** scroll view size end ***********//
-            
+        
+        
+        
+        
             
         }// viewdidload end
         
@@ -86,8 +121,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
             })
             
         }
-
     
+    
+        func addCardAction(sender:UIButton!) {
+            print("Adding a new Card")
+        }
+
+        func searchAction(sender:UIButton!) {
+            print("Searching Vicinity")
+        }
+    
+        func viewCardAction(sender:UIButton!) {
+            print("Viewing my cards")
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
