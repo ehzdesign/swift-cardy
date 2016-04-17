@@ -65,9 +65,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
             //*********** scroll view size ***********//
     
 //            scrollView.contentSize = CGSize(width: scrollViewWidth, height: 235 * albumImages.count)
-//        scrollView.contentSize = CGSize(width: Int(scrollView.frame.width), height: 235 * albumImages.count)
-       
-//        scrollView.contentSize = CGSize(width: Int(scrollView.frame.width), height: 235 * albumImages.count)
+        
+        scrollView.contentSize = CGSize(width: Int(scrollView.frame.width), height: 235 * albumImages.count)
         scrollView.delegate = self
         print(scrollView.frame.width)
         print(scrollView.contentSize)

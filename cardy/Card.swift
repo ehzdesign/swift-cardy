@@ -22,7 +22,7 @@ class Card: UIView {
     
     var albumImageName = ""
     
-    
+    let shadowView = UIView(frame: CGRectMake(50, 50, 100, 100))
     
     var count:Double = 0
     func setup(backgroundImageName:String){
@@ -46,18 +46,29 @@ class Card: UIView {
         backgroundImage.layer.borderColor = UIColor .blackColor().CGColor
         
         //*** shadows ***//
-        backgroundImage.layer.shadowColor = UIColor.blackColor().CGColor
-        backgroundImage.layer.shadowOffset = CGSizeZero
-        backgroundImage.layer.shadowOpacity = 1
-        backgroundImage.layer.shadowRadius = 50
+//        backgroundImage.layer.shadowColor = UIColor.blackColor().CGColor
+//        backgroundImage.layer.shadowOffset = CGSizeZero
+//        backgroundImage.layer.shadowOpacity = 1
+//        backgroundImage.layer.shadowRadius = 50
         
+        //*** shadows - ericks code ***//
+        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.layer.shadowRadius = 10
         
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).CGPath
+        
+//               self.layer.shouldRasterize = true
+        
+        //add rounded edge on view
+        self.layer.cornerRadius = 10
         
         albumImageName = backgroundImageName
         
         UIView.animateWithDuration(1.3, delay: self.count * 0.4, options: .CurveEaseInOut, animations: {
             self.backgroundImage.frame.origin = CGPoint(x: 0, y: 0)
-            self.backgroundImage.alpha = 1
+            print("animation woorked!")
             },
             completion: {(value: Bool) in
                 
@@ -66,6 +77,8 @@ class Card: UIView {
         
         self.addSubview(backgroundImage)
         self.clipsToBounds = true
-
+        
+        
 }
+    
 }
