@@ -29,14 +29,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         addCard.frame = CGRectMake(-0, 600, 100, 50)
         addCard.backgroundColor = UIColor.greenColor()
         addCard.setTitle("Add Card", forState: UIControlState.Normal)
-        addCard.addTarget(self, action: "addCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        addCard.addTarget(self, action: #selector(ViewController.addCardAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
         let search = UIButton(type: UIButtonType.System) as UIButton
         search.frame = CGRectMake(115, 600, 100, 50)
         search.backgroundColor = UIColor.greenColor()
         search.setTitle("Search", forState: UIControlState.Normal)
-        search.addTarget(self, action: "searchAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        search.addTarget(self, action: #selector(ViewController.searchAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
         
@@ -44,7 +44,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         viewCards.frame = CGRectMake(230, 600, 100, 50)
         viewCards.backgroundColor = UIColor.greenColor()
         viewCards.setTitle("View Card", forState: UIControlState.Normal)
-        viewCards.addTarget(self, action: "viewCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        viewCards.addTarget(self, action: #selector(ViewController.viewCardAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
  
