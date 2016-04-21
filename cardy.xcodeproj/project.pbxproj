@@ -16,6 +16,9 @@
 		80386A3E1CB7451A0069B8D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80386A3C1CB7451A0069B8D8 /* LaunchScreen.storyboard */; };
 		80386A491CB7451A0069B8D8 /* cardyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80386A481CB7451A0069B8D8 /* cardyTests.swift */; };
 		80386A541CB7451A0069B8D8 /* cardyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80386A531CB7451A0069B8D8 /* cardyUITests.swift */; };
+		804CABFD1CC9237E00AAE4F9 /* addCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804CABFC1CC9237E00AAE4F9 /* addCardVC.swift */; };
+		804CAC391CC92B5C00AAE4F9 /* discoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804CAC381CC92B5C00AAE4F9 /* discoverVC.swift */; };
+		804CAC3B1CC92E1A00AAE4F9 /* tabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804CAC3A1CC92E1A00AAE4F9 /* tabBarController.swift */; };
 		80E444AF1CB75936001A4D49 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 80E444AE1CB75936001A4D49 /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +54,9 @@
 		80386A4F1CB7451A0069B8D8 /* cardyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80386A531CB7451A0069B8D8 /* cardyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardyUITests.swift; sourceTree = "<group>"; };
 		80386A551CB7451A0069B8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		804CABFC1CC9237E00AAE4F9 /* addCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCardVC.swift; sourceTree = "<group>"; };
+		804CAC381CC92B5C00AAE4F9 /* discoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = discoverVC.swift; sourceTree = "<group>"; };
+		804CAC3A1CC92E1A00AAE4F9 /* tabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabBarController.swift; sourceTree = "<group>"; };
 		80E444AE1CB75936001A4D49 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A71F98E5B4BCF33DFEE83C46 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AE63B0210BD355E81173DE9F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 				80386A351CB7451A0069B8D8 /* ViewController.swift */,
 				338AD0871CBFCF0700355E62 /* Card.swift */,
 				80386A371CB7451A0069B8D8 /* Main.storyboard */,
+				804CAC3A1CC92E1A00AAE4F9 /* tabBarController.swift */,
+				804CAC381CC92B5C00AAE4F9 /* discoverVC.swift */,
+				804CABFC1CC9237E00AAE4F9 /* addCardVC.swift */,
 				80386A3A1CB7451A0069B8D8 /* Assets.xcassets */,
 				80386A3C1CB7451A0069B8D8 /* LaunchScreen.storyboard */,
 				80386A3F1CB7451A0069B8D8 /* Info.plist */,
@@ -342,7 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				80386A361CB7451A0069B8D8 /* ViewController.swift in Sources */,
+				804CAC3B1CC92E1A00AAE4F9 /* tabBarController.swift in Sources */,
 				338AD0881CBFCF0800355E62 /* Card.swift in Sources */,
+				804CAC391CC92B5C00AAE4F9 /* discoverVC.swift in Sources */,
+				804CABFD1CC9237E00AAE4F9 /* addCardVC.swift in Sources */,
 				80386A341CB7451A0069B8D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
