@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
     
     let albumImages = ["clouds","clouds","clouds","clouds","clouds","clouds"]
     
-    var albums:[Card] = []
+    var cards:[Card] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +29,23 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         addCard.frame = CGRectMake(-0, 600, 100, 50)
         addCard.backgroundColor = UIColor.greenColor()
         addCard.setTitle("Add Card", forState: UIControlState.Normal)
-        addCard.addTarget(self, action: "addCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+//        addCard.addTarget(self, action: "addCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        addCard.addTarget(self, action: #selector(ViewController.addCardAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         let search = UIButton(type: UIButtonType.System) as UIButton
         search.frame = CGRectMake(115, 600, 100, 50)
         search.backgroundColor = UIColor.greenColor()
         search.setTitle("Search", forState: UIControlState.Normal)
-        search.addTarget(self, action: "searchAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+//        search.addTarget(self, action: "searchAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        search.addTarget(self, action: #selector(ViewController.searchAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
         let viewCards = UIButton(type: UIButtonType.System) as UIButton
         viewCards.frame = CGRectMake(230, 600, 100, 50)
         viewCards.backgroundColor = UIColor.greenColor()
         viewCards.setTitle("View Card", forState: UIControlState.Normal)
-        viewCards.addTarget(self, action: "viewCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+//        viewCards.addTarget(self, action: "viewCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            viewCards.addTarget(self, action: #selector(ViewController.viewCardAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
  
         self.view.addSubview(addCard)
@@ -85,7 +85,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
                 newAlbum.count = count
                 newAlbum.setup(albumImage)
                 scrollView.addSubview(newAlbum)
-                albums.append(newAlbum)
+                cards.append(newAlbum)
                 count += 1;
                 
                 print("card size:\(newAlbum.frame.width)")
@@ -105,9 +105,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         
         //*********** scroll view size end ***********//
         
-        
-        
-        
             
         }// viewdidload end
         
@@ -122,6 +119,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
             
         }
     
+        //*********** button functions ***********//
+    
     
         func addCardAction(sender:UIButton!) {
             print("Adding a new Card")
@@ -134,7 +133,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         func viewCardAction(sender:UIButton!) {
             print("Viewing my cards")
         }
-
+    
+        //*********** button functions end***********//
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

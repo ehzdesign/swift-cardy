@@ -27,6 +27,7 @@ class Card: UIView {
     var cardPrice = UILabel(frame: CGRectMake(0, 0, 50, 20))
     
     var count:Double = 0
+    
     func setup(backgroundImageName:String){
         
         //*** main styles ***//
@@ -64,12 +65,13 @@ class Card: UIView {
 //               self.layer.shouldRasterize = true
         
         
-        
+        //*** name of card label ***//
         cardNameLabel.frame.origin = CGPoint(x: 15, y: 20)
         cardNameLabel.textAlignment = NSTextAlignment.Center
         cardNameLabel.text = "Test label"
         cardNameLabel.backgroundColor = UIColor.blueColor()
     
+        //*** price of card label ***//
         cardPrice.frame.origin = CGPoint(x: 290, y: 20)
         cardPrice.textAlignment = NSTextAlignment.Center
         cardPrice.text = "$$$"
@@ -86,8 +88,13 @@ class Card: UIView {
                 self.delegate?.animationDidComplete(self)
         })
         
+        //*** adding image of card ***//
         self.addSubview(backgroundImage)
+        
+        //*** for corner radius ***//
         self.clipsToBounds = true
+        
+        //*** adding labels of card ***//
         self.backgroundImage.addSubview(cardNameLabel)
         self.backgroundImage.addSubview(cardPrice)
         
