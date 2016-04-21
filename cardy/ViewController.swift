@@ -30,22 +30,22 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         
         
         let addCard = UIButton(type: UIButtonType.System) as UIButton
-        addCard.frame = CGRectMake(-0, 600, 100, 50)
+        addCard.frame = CGRectMake(0, 600, 125, 50)
         addCard.backgroundColor = UIColor.greenColor()
         addCard.setTitle("Add Card", forState: UIControlState.Normal)
 //        addCard.addTarget(self, action: "addCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
         addCard.addTarget(self, action: #selector(ViewController.addCardAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         let search = UIButton(type: UIButtonType.System) as UIButton
-        search.frame = CGRectMake(115, 600, 100, 50)
+        search.frame = CGRectMake(130, 600, 125, 50)
         search.backgroundColor = UIColor.greenColor()
         search.setTitle("Search", forState: UIControlState.Normal)
 //        search.addTarget(self, action: "searchAction:", forControlEvents: UIControlEvents.TouchUpInside)
         search.addTarget(self, action: #selector(ViewController.searchAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
+
         
         let viewCards = UIButton(type: UIButtonType.System) as UIButton
-        viewCards.frame = CGRectMake(230, 600, 100, 50)
+        viewCards.frame = CGRectMake(260, 600, 125, 50)
         viewCards.backgroundColor = UIColor.greenColor()
         viewCards.setTitle("View Card", forState: UIControlState.Normal)
 //        viewCards.addTarget(self, action: "viewCardAction:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -128,6 +128,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
     
         func addCardAction(sender:UIButton!) {
             print("Adding a new Card")
+            
         }
 
         func searchAction(sender:UIButton!) {
