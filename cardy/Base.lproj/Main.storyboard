@@ -56,8 +56,19 @@
                             <constraint firstItem="Ffi-ii-rng" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gtB-7s-CQJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="all cards" image="all_cards_icon" selectedImage="all_cards_icon" id="UiI-G9-9nT"/>
+                    <tabBarItem key="tabBarItem" title="all cards" image="all_cards_icon" selectedImage="all_cards_icon" id="UiI-G9-9nT">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.52156862745098043" green="0.67450980392156867" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.52156862745098043" green="0.67450980392156867" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="scrollView" destination="Ffi-ii-rng" id="NgP-AL-3SK"/>
                     </connections>
@@ -197,7 +208,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="YPk-2i-tze" secondAttribute="trailing" constant="12" id="upy-1v-7K6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="add card" image="add_card_icon" id="lDY-Rd-v6e"/>
+                    <tabBarItem key="tabBarItem" title="add card" image="add_card_icon" id="lDY-Rd-v6e">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.38823529411764707" green="0.81568627450980391" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="pCQ-UV-YfR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -230,9 +247,19 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="discover" image="discover_icon" id="szz-j1-bbv">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.74509803921568629" green="0.51764705882352935" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                            <color key="value" red="0.74509803921568629" green="0.51764705882352935" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnz-cs-03V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
