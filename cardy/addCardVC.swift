@@ -111,15 +111,23 @@ class addCardVC: UIViewController {
         let cardNameRef = usersCardRef.childByAutoId()
         cardNameRef.setValue(newCard)
         
-        
+        alertUserCardAdded()
         
         
     }
     
-    func addCardsToFirebase(){
+    func alertUserCardAdded(){
+        let cardAddedAlert = UIAlertController(title: "New Card Added", message: "Erick is doing a great job! isn't he?", preferredStyle: UIAlertControllerStyle.Alert)
         
+        cardAddedAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+        }))
         
+        cardAddedAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
         
+        presentViewController(cardAddedAlert, animated: true, completion: nil)
         
     }
 }
