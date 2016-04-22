@@ -22,12 +22,16 @@ class Card: UIView {
     
     var albumImageName = ""
     
-    var cardNameLabel = UILabel(frame: CGRectMake(0, 0, 100, 20))
+    var cardNameLabel = UILabel(frame: CGRectMake(0, 0, 300, 40))
     
-    var cardPrice = UILabel(frame: CGRectMake(0, 0, 50, 20))
+    var cardPrice = UILabel(frame: CGRectMake(0, 0, 100, 30))
+    
+    var cardNumberLabel = UILabel(frame:CGRectMake(0,0,300,40))
     
     var count:Double = 0
-    func setup(backgroundImageName:String){
+    
+//    , cardNumberValue:String
+    func setup(backgroundImageName:String, textLabelValue:String, amountLabelValue:String, cardNumberLabelValue:String){
         
         //*** main styles ***//
         backgroundImage.frame.size = self.frame.size
@@ -44,8 +48,8 @@ class Card: UIView {
         backgroundImage.layer.masksToBounds = true
         
         //*** borders ***//
-        backgroundImage.layer.borderWidth = 3;
-        backgroundImage.layer.borderColor = UIColor .blackColor().CGColor
+//        backgroundImage.layer.borderWidth = 3;
+//        backgroundImage.layer.borderColor = UIColor .blackColor().CGColor
         
         //*** shadows ***//
 //        backgroundImage.layer.shadowColor = UIColor.blackColor().CGColor
@@ -66,14 +70,25 @@ class Card: UIView {
         
         
         cardNameLabel.frame.origin = CGPoint(x: 15, y: 20)
-        cardNameLabel.textAlignment = NSTextAlignment.Center
-        cardNameLabel.text = "Test label"
-        cardNameLabel.backgroundColor = UIColor.blueColor()
+        cardNameLabel.textAlignment = NSTextAlignment.Left
+        
+        //set value of cardnameLabe and make lowercase
+        cardNameLabel.text = textLabelValue.lowercaseString
+//        cardNameLabel.backgroundColor = UIColor.blueColor()
+        cardNameLabel.font = UIFont(name: "Futura", size: 30)
     
-        cardPrice.frame.origin = CGPoint(x: 290, y: 20)
-        cardPrice.textAlignment = NSTextAlignment.Center
-        cardPrice.text = "$$$"
-        cardPrice.backgroundColor = UIColor.orangeColor()
+        cardPrice.frame.origin = CGPoint(x: 200, y: self.frame.height - self.frame.height/2 - 15)
+        cardPrice.textAlignment = NSTextAlignment.Right
+        cardPrice.text = "$" + amountLabelValue
+//        cardPrice.backgroundColor = UIColor.orangeColor()
+        cardPrice.font = UIFont(name: "Futura", size: 25)
+        
+        
+         cardNumberLabel.frame.origin = CGPoint(x: 10 , y: self.frame.height - 50)
+//        cardNumberLabel.backgroundColor = UIColor.orangeColor()
+        cardNumberLabel.text = cardNumberLabelValue
+        
+       
         
         albumImageName = backgroundImageName
         
@@ -90,6 +105,7 @@ class Card: UIView {
         self.clipsToBounds = true
         self.backgroundImage.addSubview(cardNameLabel)
         self.backgroundImage.addSubview(cardPrice)
+        self.backgroundImage.addSubview(cardNumberLabel)
         
 }
     

@@ -27,7 +27,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+ 
         
         
         
@@ -64,15 +64,22 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         ref.observeEventType(.ChildAdded, withBlock: { snapshot in
             
             //make a new card
-            var newCard = Card(frame:CGRect(x: 0, y: CGFloat(235*self.count), width: self.scrollView.frame.width - 20, height: 220))
+            let newCard = Card(frame:CGRect(x: 0, y: CGFloat(235*self.count), width: self.scrollView.frame.width - 20, height: 220))
             
             //add card to scrollview
             self.scrollView.addSubview(newCard)
 //            print("new card added")
             
+    
+            
+            let companyName = (snapshot.value.objectForKey("companyName")as? String)!
+            let amount = (snapshot.value.objectForKey("amount")as? String)!
+            let cardNumber = (snapshot.value.objectForKey("cardNumber")as? String)!
+            
+            
             
             //add image to card
-            newCard.setup("clouds")
+            newCard.setup("clouds", textLabelValue: companyName, amountLabelValue: amount, cardNumberLabelValue:cardNumber)
             
 //            increase counter for every new card found
              self.count += 1;
