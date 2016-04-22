@@ -9,17 +9,19 @@
 
 import UIKit
 import GoogleMaps
+import Firebase
 
 class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
     
     @IBOutlet weak var scrollView: UIScrollView!
-    //
-    //    let cardImages = ["clouds.jpeg","clouds.jpeg","clouds.jpeg"]
+
     
-    let albumImages = ["clouds","clouds","clouds","clouds","clouds","clouds"]
+//    let albumImages = ["clouds","clouds","clouds","clouds","clouds","clouds"]
     
-    var albums:[Card] = []
+
     
+    //create a counter for cards in database
+    var count:Int = 0
     
     
     override func viewDidLoad() {
@@ -27,38 +29,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         
         
         
-        let addCard = UIButton(type: UIButtonType.System) as UIButton
-        addCard.frame = CGRectMake(-0, 600, 100, 50)
-        addCard.backgroundColor = UIColor.greenColor()
-        addCard.setTitle("Add Card", forState: UIControlState.Normal)
-        addCard.addTarget(self, action: #selector(ViewController.addCardAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        
-        let search = UIButton(type: UIButtonType.System) as UIButton
-        search.frame = CGRectMake(115, 600, 100, 50)
-        search.backgroundColor = UIColor.greenColor()
-        search.setTitle("Search", forState: UIControlState.Normal)
-        search.addTarget(self, action: #selector(ViewController.searchAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        
-        
-        let viewCards = UIButton(type: UIButtonType.System) as UIButton
-        viewCards.frame = CGRectMake(230, 600, 100, 50)
-        viewCards.backgroundColor = UIColor.greenColor()
-        viewCards.setTitle("View Card", forState: UIControlState.Normal)
-        viewCards.addTarget(self, action: #selector(ViewController.viewCardAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        
-        
-        //        self.view.addSubview(addCard)
-        //        self.view.addSubview(search)
-        //        self.view.addSubview(viewCards)
-        
         
         
         //*********** map ***********//
         
-        print("test")
+//        print("test")
         
         //        // Do any additional setup after loading the view, typically from a nib.
         //        let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
@@ -79,33 +54,53 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         
         
         
+    
         
+        let ref = Firebase(url:"https://vivid-torch-2205.firebaseio.com/usersCards")
         
-        var count:Double = 0
-        for albumImage in albumImages {
-            let newAlbum = Card(frame:CGRect(x: 0, y: CGFloat(235*count), width: scrollView.frame.width - 20, height: 220))
-            newAlbum.count = count
-            newAlbum.setup(albumImage)
-            scrollView.addSubview(newAlbum)
-            albums.append(newAlbum)
-            count += 1;
+  
+        
+        //watch the database of cards and return their values
+        ref.observeEventType(.ChildAdded, withBlock: { snapshot in
             
-            print("card size:\(newAlbum.frame.width)")
+            //make a new card
+            var newCard = Card(frame:CGRect(x: 0, y: CGFloat(235*self.count), width: self.scrollView.frame.width - 20, height: 220))
             
-            newAlbum.delegate = self;
+            //add card to scrollview
+            self.scrollView.addSubview(newCard)
+//            print("new card added")
             
-        }
+            
+            //add image to card
+            newCard.setup("clouds")
+            
+//            increase counter for every new card found
+             self.count += 1;
+            
+            newCard.delegate = self;
+            
+            //set scroll view size based on how many cards
+            self.scrollView.contentSize = CGSize(width: Int(self.scrollView.frame.width), height: 235 * self.count)
+            self.scrollView.delegate = self
+
+            
+            
+            
+//            print(snapshot.value.objectForKey("amount"))
+//            print(snapshot.value.objectForKey("cardNumber"))
+//            print(snapshot.value.objectForKey("companyName"))
+            
+
+            
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
         
-        //*********** scroll view size ***********//
+      
+    
         
-        //            scrollView.contentSize = CGSize(width: scrollViewWidth, height: 235 * albumImages.count)
         
-        scrollView.contentSize = CGSize(width: Int(scrollView.frame.width), height: 235 * albumImages.count)
-        scrollView.delegate = self
-        print(scrollView.frame.width)
-        print(scrollView.contentSize)
-        
-        //*********** scroll view size end ***********//
+
         
         
         

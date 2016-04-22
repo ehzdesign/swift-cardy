@@ -14,6 +14,7 @@ class discoverVC: UIViewController {
     
     @IBOutlet weak var companyLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
