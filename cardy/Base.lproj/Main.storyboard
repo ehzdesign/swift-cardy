@@ -99,8 +99,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="148"/>
                                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="little burgundy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdG-gF-mIz">
-                                        <rect key="frame" x="8" y="8" width="287" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="company name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdG-gF-mIz">
+                                        <rect key="frame" x="8" y="8" width="287" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="M3h-YH-ISS"/>
                                         </constraints>
@@ -108,8 +108,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="112334956977997AB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzb-GX-AI9">
-                                        <rect key="frame" x="8" y="108" width="287" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="000000000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzb-GX-AI9">
+                                        <rect key="frame" x="8" y="108" width="287" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="dAR-7e-fy3"/>
                                         </constraints>
@@ -117,7 +117,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-Gd-VdP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-Gd-VdP">
                                         <rect key="frame" x="252" y="47" width="67" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="53" id="Hbt-k0-Fuf"/>
@@ -149,21 +149,17 @@
                                     <constraint firstItem="EdG-gF-mIz" firstAttribute="leading" secondItem="QVN-iL-eUF" secondAttribute="leading" constant="8" id="qXp-dv-YWY"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPk-2i-tze">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="amount" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YPk-2i-tze">
                                 <rect key="frame" x="28" y="368" width="319" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5bR-KE-4D9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xyV-rd-QOK">
-                                <rect key="frame" x="32" y="430" width="311" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Pan-ga-jPC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="amountLabelUpdate:" destination="zEa-FB-NLa" eventType="editingDidEnd" id="8DX-QT-aPR"/>
+                                    <action selector="amountLabelUpdate:" destination="zEa-FB-NLa" eventType="editingChanged" id="bkp-oz-tB2"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2x-6I-ZPC">
                                 <rect key="frame" x="46" y="492" width="283" height="44"/>
@@ -175,16 +171,32 @@
                                 <state key="normal" title="save card">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveCardAction:" destination="zEa-FB-NLa" eventType="touchUpInside" id="ckW-Dy-UcQ"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="company name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-YA-fLd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="company name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-YA-fLd">
                                 <rect key="frame" x="28" y="313" width="319" height="30"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hwg-g6-Gcl"/>
                                 </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="companyNameLabel:" destination="zEa-FB-NLa" eventType="editingChanged" id="SX7-0H-giy"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="card number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xyV-rd-QOK">
+                                <rect key="frame" x="32" y="430" width="311" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Pan-ga-jPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="cardNumberUpdate:" destination="zEa-FB-NLa" eventType="editingChanged" id="zrC-ni-WsQ"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -221,7 +233,12 @@
                     <navigationItem key="navigationItem" id="pCQ-UV-YfR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="amountField" destination="YPk-2i-tze" id="K0j-FA-31b"/>
+                        <outlet property="amountLabel" destination="9Ga-Gd-VdP" id="ca5-Se-XUH"/>
+                        <outlet property="cardNumberField" destination="xyV-rd-QOK" id="aeT-Rk-FAP"/>
+                        <outlet property="cardNumberLabel" destination="vzb-GX-AI9" id="Rx3-nu-BZq"/>
                         <outlet property="companyLabel" destination="EdG-gF-mIz" id="dfI-ZI-Xrg"/>
+                        <outlet property="companyNameField" destination="wX6-YA-fLd" id="4Yw-TG-mC8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egE-IV-RQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
