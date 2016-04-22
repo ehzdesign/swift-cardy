@@ -13,6 +13,8 @@ import Firebase
 
 class addCardVC: UIViewController {
     
+ 
+    
     //label for company name on card
     @IBOutlet weak var companyLabel: UILabel!
     
@@ -38,6 +40,7 @@ class addCardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //change input placeholder text color
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1.0) /* #e5e5e5 */
 
         
@@ -94,21 +97,28 @@ class addCardVC: UIViewController {
     @IBAction func saveCardAction(sender: AnyObject) {
      //get text from compnay name field and save to new Card dictionary
         
-        let cardName = "cards/" + companyNameField.text! + "Card"
-        let newCardRef = ref.childByAppendingPath(String(cardName))
-        
-        
-        
+        let usersCardRef = ref.childByAppendingPath(String("usersCards"))
+    
         
         var newCard = [String: String]()
     
-        
+//        let cardName =  companyNameField.text! + "Card"
         newCard["companyName"] = companyNameField.text
         newCard["amount"] = amountField.text
         newCard["cardNumber"] = cardNumberField.text
         
-        newCardRef.updateChildValues(newCard)
+        let cardNameRef = usersCardRef.childByAutoId()
+        cardNameRef.setValue(newCard)
+        
+        
         
      
+    }
+    
+    func addCardsToFirebase(){
+        
+      
+       
+
     }
 }
