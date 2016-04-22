@@ -12,6 +12,8 @@ import Firebase
 
 class discoverVC: UIViewController {
     
+    @IBOutlet weak var companyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,12 @@ class discoverVC: UIViewController {
             print(snapshot.value.objectForKey("amount"))
             print(snapshot.value.objectForKey("cardNumber"))
             print(snapshot.value.objectForKey("companyName"))
+            
+            //display data on label in view
+            let companyName = snapshot.value.objectForKey("companyName") as? String
+            self.companyLabel.text = companyName
+
+            
             }, withCancelBlock: { error in
                 print(error.description)
         })
