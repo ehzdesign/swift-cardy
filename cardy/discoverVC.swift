@@ -24,6 +24,11 @@ class discoverVC: UIViewController {
             print(snapshot.value.objectForKey("cardNumber"))
             print(snapshot.value.objectForKey("companyName"))
             
+//            let enumerator = snapshot.children
+//            while let rest = enumerator.nextObject() as? FDataSnapshot {
+//                println(rest.value)
+//            }
+//            
             //display data on label in view
             let companyName = snapshot.value.objectForKey("companyName") as? String
             self.companyLabel.text = companyName
