@@ -260,11 +260,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="view_bg" translatesAutoresizingMaskIntoConstraints="NO" id="URf-fY-3Yy">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9B3-mf-6df">
+                                <rect key="frame" x="20" y="28" width="335" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9B3-mf-6df" firstAttribute="centerX" secondItem="URf-fY-3Yy" secondAttribute="centerX" id="MjB-Yn-fo6"/>
+                            <constraint firstItem="9B3-mf-6df" firstAttribute="leading" secondItem="3T4-Ug-VeW" secondAttribute="leadingMargin" constant="4" id="Py7-tC-qpe"/>
                             <constraint firstItem="URf-fY-3Yy" firstAttribute="top" secondItem="3T4-Ug-VeW" secondAttribute="topMargin" id="Wdb-OC-5pf"/>
                             <constraint firstItem="URf-fY-3Yy" firstAttribute="leading" secondItem="3T4-Ug-VeW" secondAttribute="leadingMargin" constant="-20" id="ZPi-CS-fUu"/>
+                            <constraint firstItem="9B3-mf-6df" firstAttribute="top" secondItem="QRM-G8-ydP" secondAttribute="bottom" constant="8" symbolic="YES" id="Zpf-v7-Avs"/>
+                            <constraint firstItem="z1F-8x-ChW" firstAttribute="top" secondItem="9B3-mf-6df" secondAttribute="bottom" constant="42" id="bf8-UZ-9YU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="URf-fY-3Yy" secondAttribute="trailing" constant="-20" id="fKI-aP-jHb"/>
                         </constraints>
                     </view>
