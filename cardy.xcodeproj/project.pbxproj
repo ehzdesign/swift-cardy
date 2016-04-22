@@ -57,6 +57,7 @@
 		804CABFC1CC9237E00AAE4F9 /* addCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCardVC.swift; sourceTree = "<group>"; };
 		804CAC381CC92B5C00AAE4F9 /* discoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = discoverVC.swift; sourceTree = "<group>"; };
 		804CAC3A1CC92E1A00AAE4F9 /* tabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabBarController.swift; sourceTree = "<group>"; };
+		804CAC3C1CC983D100AAE4F9 /* cardy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cardy-Bridging-Header.h"; sourceTree = "<group>"; };
 		80E444AE1CB75936001A4D49 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A71F98E5B4BCF33DFEE83C46 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AE63B0210BD355E81173DE9F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 				80386A3A1CB7451A0069B8D8 /* Assets.xcassets */,
 				80386A3C1CB7451A0069B8D8 /* LaunchScreen.storyboard */,
 				80386A3F1CB7451A0069B8D8 /* Info.plist */,
+				804CAC3C1CC983D100AAE4F9 /* cardy-Bridging-Header.h */,
 			);
 			path = cardy;
 			sourceTree = "<group>";
@@ -500,10 +502,13 @@
 			baseConfigurationReference = A71F98E5B4BCF33DFEE83C46 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = cardy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.erickhernandez.cardy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cardy/cardy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -512,10 +517,12 @@
 			baseConfigurationReference = AE63B0210BD355E81173DE9F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = cardy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.erickhernandez.cardy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cardy/cardy-Bridging-Header.h";
 			};
 			name = Release;
 		};

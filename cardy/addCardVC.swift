@@ -8,15 +8,32 @@
 
 
 import UIKit
+import Firebase
+
 
 class addCardVC: UIViewController {
     
+    //label for company name on card
+    @IBOutlet weak var companyLabel: UILabel!
+   
+    
+    //link to firebase database
+    var ref = Firebase(url: "https://vivid-torch-2205.firebaseio.com/")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //watch company name input and adjust text on company label
+        ref.observeEventType(.Value, withBlock: {
+            snapshot in self.companyLabel.text = snapshot.value as? String
+        })
 
-    
-    self.view.backgroundColor = UIColor.redColor()
+
         
     }
 
+    @IBAction func companyNameLabel(sender: UITextField) {
+        ref.setValue(sender.text)
+    }
 }

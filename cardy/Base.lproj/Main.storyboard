@@ -183,6 +183,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="companyNameLabel:" destination="zEa-FB-NLa" eventType="editingChanged" id="SX7-0H-giy"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,13 +213,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="add card" image="add_card_icon" id="lDY-Rd-v6e">
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.38823529411764707" green="0.81568627450980391" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                <color key="value" red="0.92918882978723405" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="pCQ-UV-YfR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="9Ga-Gd-VdP" id="n0K-i5-WPp"/>
+                        <outlet property="companyLabel" destination="EdG-gF-mIz" id="dfI-ZI-Xrg"/>
+                        <outlet property="companyNameInput" destination="wX6-YA-fLd" id="K36-bp-ApT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egE-IV-RQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
