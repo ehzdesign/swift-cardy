@@ -13,24 +13,24 @@ import Firebase
 
 class addCardVC: UIViewController {
     
- 
+    
     
     //label for company name on card
     @IBOutlet weak var companyLabel: UILabel!
     
     //label for amount on card
     @IBOutlet weak var amountLabel: UILabel!
-   
+    
     //cardNumber Label
     @IBOutlet weak var cardNumberLabel: UILabel!
-
-   
+    
+    
     //company name field
     @IBOutlet weak var companyNameField: UITextField!
-
+    
     //amountField
     @IBOutlet weak var amountField: UITextField!
-//    card number field
+    //    card number field
     @IBOutlet weak var cardNumberField: UITextField!
     
     //this might link to firebase database were hoping
@@ -42,20 +42,20 @@ class addCardVC: UIViewController {
         
         //change input placeholder text color
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1.0) /* #e5e5e5 */
-
         
-       self.companyNameField.backgroundColor = UIColor.clearColor()
+        
+        self.companyNameField.backgroundColor = UIColor.clearColor()
         self.companyNameField.layer.cornerRadius = 8.0
         self.companyNameField.layer.masksToBounds = true
         
-         self.companyNameField.layer.borderWidth = 1
-       self.companyNameField.layer.borderColor = UIColor.whiteColor().CGColor
+        self.companyNameField.layer.borderWidth = 1
+        self.companyNameField.layer.borderColor = UIColor.whiteColor().CGColor
         
-
-
+        
+        
         
     }
-
+    
     //live change amount on card
     @IBAction func amountLabelUpdate(sender: UITextField) {
         
@@ -73,9 +73,9 @@ class addCardVC: UIViewController {
         
         if (sender.text!.isEmpty){
             companyLabel.text = "company name"
-          
+            
         }else{
-           companyLabel.text = (sender.text)
+            companyLabel.text = (sender.text)
         }
         
     }
@@ -85,7 +85,7 @@ class addCardVC: UIViewController {
         
         if (sender.text!.isEmpty){
             cardNumberLabel.text = "000000000000"
-           
+            
         }else{
             cardNumberLabel.text = (sender.text)
         }
@@ -95,30 +95,31 @@ class addCardVC: UIViewController {
     
     //this function will hopefully add content to new Card Dictionary
     @IBAction func saveCardAction(sender: AnyObject) {
-     //get text from compnay name field and save to new Card dictionary
+        //get text from compnay name field and save to new Card dictionary
         
         let usersCardRef = ref.childByAppendingPath(String("usersCards"))
-    
+        
         
         var newCard = [String: String]()
-    
-//        let cardName =  companyNameField.text! + "Card"
+        
+        // let cardName =  companyNameField.text! + "Card"
         newCard["companyName"] = companyNameField.text
         newCard["amount"] = amountField.text
         newCard["cardNumber"] = cardNumberField.text
         
+        //add to firebase
         let cardNameRef = usersCardRef.childByAutoId()
         cardNameRef.setValue(newCard)
         
         
         
-     
+        
     }
     
     func addCardsToFirebase(){
         
-      
-       
-
+        
+        
+        
     }
 }
