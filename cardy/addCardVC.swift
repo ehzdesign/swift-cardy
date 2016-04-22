@@ -15,6 +15,8 @@ class addCardVC: UIViewController {
     
     //label for company name on card
     @IBOutlet weak var companyLabel: UILabel!
+    
+    var newCard = []
    
     
     //link to firebase database

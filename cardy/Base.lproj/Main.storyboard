@@ -18,7 +18,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="k4L-s1-xyB"/>
                         <segue destination="uCp-7J-XMc" kind="relationship" relationship="viewControllers" id="2a2-Pi-TI1"/>
-                        <segue destination="zEa-FB-NLa" kind="relationship" relationship="viewControllers" id="5mq-3h-9g4"/>
+                        <segue destination="zEa-FB-NLa" kind="relationship" relationship="viewControllers" id="7vr-by-4my"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IU5-t3-Ahr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,37 +198,35 @@
                             <constraint firstItem="MWd-YW-IfU" firstAttribute="leading" secondItem="LYE-a8-kGe" secondAttribute="leading" id="Ngw-st-yja"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wX6-YA-fLd" secondAttribute="trailing" constant="12" id="RqZ-Wq-Stj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y2x-6I-ZPC" secondAttribute="trailing" constant="30" id="S2d-IQ-wkz"/>
+                            <constraint firstItem="QVN-iL-eUF" firstAttribute="top" secondItem="3Qw-SU-zbG" secondAttribute="bottom" constant="32" id="VMG-2l-lo5"/>
                             <constraint firstItem="MWd-YW-IfU" firstAttribute="centerX" secondItem="wX6-YA-fLd" secondAttribute="centerX" id="Wv1-qS-usN"/>
-                            <constraint firstItem="QVN-iL-eUF" firstAttribute="top" secondItem="3Qw-SU-zbG" secondAttribute="bottom" constant="32" id="d2D-0F-avL"/>
                             <constraint firstItem="xyV-rd-QOK" firstAttribute="top" secondItem="YPk-2i-tze" secondAttribute="bottom" constant="32" id="eLs-i9-61K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xyV-rd-QOK" secondAttribute="trailing" constant="16" id="h0e-si-pGO"/>
                             <constraint firstItem="YPk-2i-tze" firstAttribute="top" secondItem="wX6-YA-fLd" secondAttribute="bottom" constant="25" id="jjO-43-u7i"/>
                             <constraint firstItem="YPk-2i-tze" firstAttribute="leading" secondItem="LYE-a8-kGe" secondAttribute="leadingMargin" constant="12" id="kpu-IA-hiN"/>
                             <constraint firstAttribute="bottom" secondItem="MWd-YW-IfU" secondAttribute="bottom" id="mP2-cA-I3K"/>
-                            <constraint firstItem="cz2-CM-3WJ" firstAttribute="top" secondItem="Y2x-6I-ZPC" secondAttribute="bottom" constant="33" id="oSo-St-kjJ"/>
                             <constraint firstItem="QVN-iL-eUF" firstAttribute="leading" secondItem="LYE-a8-kGe" secondAttribute="leadingMargin" constant="20" id="tHE-C5-nYC"/>
                             <constraint firstItem="wX6-YA-fLd" firstAttribute="leading" secondItem="LYE-a8-kGe" secondAttribute="leadingMargin" constant="12" id="uKT-Y8-enb"/>
+                            <constraint firstItem="cz2-CM-3WJ" firstAttribute="top" secondItem="Y2x-6I-ZPC" secondAttribute="bottom" constant="33" id="uhe-cA-iAF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YPk-2i-tze" secondAttribute="trailing" constant="12" id="upy-1v-7K6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="add card" image="add_card_icon" id="lDY-Rd-v6e">
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
-                                <color key="value" red="0.92918882978723405" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.38823529411764707" green="0.81568627450980391" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="pCQ-UV-YfR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="amountLabel" destination="9Ga-Gd-VdP" id="n0K-i5-WPp"/>
                         <outlet property="companyLabel" destination="EdG-gF-mIz" id="dfI-ZI-Xrg"/>
-                        <outlet property="companyNameInput" destination="wX6-YA-fLd" id="K36-bp-ApT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egE-IV-RQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298.5" y="-77.5"/>
+            <point key="canvasLocation" x="-159.5" y="-138.5"/>
         </scene>
         <!--discover-->
         <scene sceneID="emH-tW-wnl">
@@ -264,7 +262,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                             <color key="value" red="0.74509803921568629" green="0.51764705882352935" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
