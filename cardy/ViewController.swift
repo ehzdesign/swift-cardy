@@ -52,7 +52,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         //*********** map end ***********//
         
         
-        
+     
         
     
         
@@ -66,12 +66,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
             //make a new card
             let newCard = Card(frame:CGRect(x: 0, y: CGFloat(235*self.count), width: self.scrollView.frame.width - 20, height: 220))
             
+           
             //add card to scrollview
             self.scrollView.addSubview(newCard)
-//            print("new card added")
+            print("here it is\(snapshot.key)")
             
-    
-            
+//            store data in variables
+            let cardKey = snapshot.key
             let companyName = (snapshot.value.objectForKey("companyName")as? String)!
             let amount = (snapshot.value.objectForKey("amount")as? String)!
             let cardNumber = (snapshot.value.objectForKey("cardNumber")as? String)!
@@ -79,23 +80,21 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
             
             
             //add image to card
-            newCard.setup("clouds", textLabelValue: companyName, amountLabelValue: amount, cardNumberLabelValue:cardNumber)
+            newCard.setup("clouds", textLabelValue: companyName, amountLabelValue: amount, cardNumberLabelValue:cardNumber,cardKey:cardKey)
             
+            
+            newCard.setBGColor(self.count)
 //            increase counter for every new card found
              self.count += 1;
             
+            //i dont know what this does
             newCard.delegate = self;
             
             //set scroll view size based on how many cards
             self.scrollView.contentSize = CGSize(width: Int(self.scrollView.frame.width), height: 235 * self.count)
             self.scrollView.delegate = self
 
-            
-            
-            
-//            print(snapshot.value.objectForKey("amount"))
-//            print(snapshot.value.objectForKey("cardNumber"))
-//            print(snapshot.value.objectForKey("companyName"))
+    
             
 
             
@@ -105,12 +104,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         
       
     
-        
-        
-
-        
-        
-        
         
         
         
@@ -129,18 +122,36 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
     
     
     
-    func addCardAction(sender:UIButton!) {
-        print("Adding a new Card")
-    }
+    //run this function when card is tapped
+    func tappedCard(sender: Card) {
+        
+//        open view controller cardDetailVC
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewControllerWithIdentifier("cardDetailVC") as! cardDetailVC
+        
+       
     
-    func searchAction(sender:UIButton!) {
-        print("Searching Vicinity")
-    }
     
-    func viewCardAction(sender:UIButton!) {
-        print("Viewing my cards")
+
+        
+        //url to specific card in firebase
+         let ref = Firebase(url:"https://vivid-torch-2205.firebaseio.com/usersCards/\(sender.cardKey)")
+        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            print(snapshot)
+        
+      
+         //prepare data for transfer to view controller
+         vc.cardDataCompanyName = snapshot.value.objectForKey("companyName") as? String!
+         vc.cardDataAmount = snapshot.value.objectForKey("amount") as? String!
+         vc.cardDataCardNumber = snapshot.value.objectForKey("cardNumber") as? String!
+            
+         vc.cardBGColor = sender.backgroundColor
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+            
+        })
     }
-    
     
     
     

@@ -93,9 +93,9 @@ class addCardVC: UIViewController {
     }
     
     
-    //this function will hopefully add content to new Card Dictionary
+    
     @IBAction func saveCardAction(sender: AnyObject) {
-        //get text from compnay name field and save to new Card dictionary
+        
         
         let usersCardRef = ref.childByAppendingPath(String("usersCards"))
         
