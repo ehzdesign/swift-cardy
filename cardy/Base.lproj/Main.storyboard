@@ -96,6 +96,9 @@
                                     <action selector="backToAllCardsAction:" destination="a0o-O5-gjO" eventType="touchUpInside" id="XvP-DQ-KGH"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="view_bg" translatesAutoresizingMaskIntoConstraints="NO" id="GB8-6y-niG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9T-Tl-AXm">
                                 <rect key="frame" x="20" y="110" width="280" height="200"/>
                                 <subviews>
@@ -142,10 +145,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="P9T-Tl-AXm" firstAttribute="top" secondItem="BAj-F6-TA8" secondAttribute="top" constant="110" id="6nu-lN-a8e"/>
+                            <constraint firstItem="GB8-6y-niG" firstAttribute="top" secondItem="BAj-F6-TA8" secondAttribute="top" id="CgW-j9-u3T"/>
                             <constraint firstItem="P9T-Tl-AXm" firstAttribute="leading" secondItem="9MH-M7-M7t" secondAttribute="leading" id="aE8-in-wm3"/>
                             <constraint firstItem="P9T-Tl-AXm" firstAttribute="centerX" secondItem="BAj-F6-TA8" secondAttribute="centerX" id="bDJ-Vd-HX5"/>
+                            <constraint firstItem="GB8-6y-niG" firstAttribute="leading" secondItem="BAj-F6-TA8" secondAttribute="leading" id="d6j-nu-gcm"/>
                             <constraint firstItem="P9T-Tl-AXm" firstAttribute="leading" secondItem="BAj-F6-TA8" secondAttribute="leadingMargin" constant="4" id="ffL-Lb-cFQ"/>
                             <constraint firstItem="P9T-Tl-AXm" firstAttribute="top" secondItem="9MH-M7-M7t" secondAttribute="bottom" constant="58" id="g2m-PZ-hS3"/>
+                            <constraint firstItem="GB8-6y-niG" firstAttribute="centerX" secondItem="P9T-Tl-AXm" secondAttribute="centerX" id="qlf-eT-XAm"/>
+                            <constraint firstItem="GB8-6y-niG" firstAttribute="bottom" secondItem="nbm-hz-0pQ" secondAttribute="top" id="sDF-rR-PlW"/>
                         </constraints>
                     </view>
                     <connections>
