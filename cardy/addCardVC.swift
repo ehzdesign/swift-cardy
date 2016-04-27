@@ -46,8 +46,6 @@ class addCardVC: UIViewController {
         //change input placeholder text color
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1.0) /* #e5e5e5 */
         
-       
-        
         
         let fieldArray = [companyNameField, amountField, cardNumberField]
         

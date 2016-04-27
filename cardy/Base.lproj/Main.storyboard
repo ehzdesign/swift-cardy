@@ -236,6 +236,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5bR-KE-4D9"/>
                                 </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
@@ -275,6 +276,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Pan-ga-jPC"/>
                                 </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>

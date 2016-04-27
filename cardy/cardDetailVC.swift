@@ -43,11 +43,13 @@ class cardDetailVC: UIViewController {
         //set background color to card
         cardView.backgroundColor = cardBGColor
         
+        //set rounded corners on card
         cardView.layer.cornerRadius = 10
         
+        //set shadow on card
         cardView.layer.shadowColor = UIColor.blackColor().CGColor
         cardView.layer.shadowOpacity = 0.4
-        cardView.layer.shadowOffset = CGSize(width: -5, height: 10)
+        cardView.layer.shadowOffset = CGSize(width: -10, height: 2)
         cardView.layer.shadowRadius = 10
         
         cardView.layer.shadowPath = UIBezierPath(rect: cardView.bounds).CGPath
