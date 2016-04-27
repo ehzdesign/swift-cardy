@@ -64,7 +64,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, CardDelegate{
         ref.observeEventType(.ChildAdded, withBlock: { snapshot in
             
             //make a new card
-            let newCard = Card(frame:CGRect(x: 0, y: CGFloat(235*self.count), width: self.scrollView.frame.width - 20, height: 220))
+            let newCard = Card(frame:CGRect(x: 10, y: CGFloat(235*self.count), width: self.scrollView.frame.width - 20, height: 200))
             
            
             //add card to scrollview

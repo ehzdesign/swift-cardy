@@ -33,6 +33,9 @@ class addCardVC: UIViewController {
     //    card number field
     @IBOutlet weak var cardNumberField: UITextField!
     
+    
+    
+    
     //this might link to firebase database were hoping
     var ref = Firebase(url: "https://vivid-torch-2205.firebaseio.com/")
     
@@ -43,16 +46,22 @@ class addCardVC: UIViewController {
         //change input placeholder text color
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1.0) /* #e5e5e5 */
         
-        
-        self.companyNameField.backgroundColor = UIColor.clearColor()
-        self.companyNameField.layer.cornerRadius = 8.0
-        self.companyNameField.layer.masksToBounds = true
-        
-        self.companyNameField.layer.borderWidth = 1
-        self.companyNameField.layer.borderColor = UIColor.whiteColor().CGColor
+       
         
         
+        let fieldArray = [companyNameField, amountField, cardNumberField]
         
+        
+        for field in fieldArray{
+           
+            field.backgroundColor = UIColor.clearColor()
+            field.layer.cornerRadius = 8.0
+            field.layer.masksToBounds = true
+            
+            field.layer.borderWidth = 1
+            field.layer.borderColor = UIColor.whiteColor().CGColor
+            
+        }
         
     }
     

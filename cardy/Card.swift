@@ -50,18 +50,18 @@ class Card: UIView {
     func setup(backgroundImageName:String, textLabelValue:String, amountLabelValue:String, cardNumberLabelValue:String, cardKey:String){
         
         //*** main styles ***//
-        backgroundImage.frame.size = self.frame.size
-        backgroundImage.frame.size.height = self.frame.size.height// * 1.5
-        backgroundImage.contentMode = .ScaleAspectFill
-        backgroundImage.image = UIImage(named: backgroundImageName)
-        backgroundImage.frame.origin = CGPoint(x: 0, y:0)
-        backgroundImage.alpha = 1
-        
-        backgroundImage.frame.origin.x = (self.bounds.size.width - backgroundImage.frame.size.width) / 2.0
+//        backgroundImage.frame.size = self.frame.size
+//        backgroundImage.frame.size.height = self.frame.size.height// * 1.5
+//        backgroundImage.contentMode = .ScaleAspectFill
+//        backgroundImage.image = UIImage(named: backgroundImageName)
+//        backgroundImage.frame.origin = CGPoint(x: 0, y:0)
+//        backgroundImage.alpha = 1
+//        
+//        backgroundImage.frame.origin.x = (self.bounds.size.width - backgroundImage.frame.size.width) / 2.0
         
         //*** corners ***//
         self.layer.cornerRadius = 10
-        self.layer.masksToBounds = true
+//
         
         //*** borders ***//
 //        backgroundImage.layer.borderWidth = 3;
@@ -76,10 +76,11 @@ class Card: UIView {
         //*** shadows - ericks code ***//
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowOpacity = 0.4
-        self.layer.shadowOffset = CGSize(width: 0, height: 8)
-        self.layer.shadowRadius = 10
+        self.layer.shadowOffset = CGSize(width: 0, height: 10)
+        self.layer.shadowRadius = 5
         
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).CGPath
+//        self.layer.masksToBounds = true
         
 //      self.layer.shouldRasterize = true
         
