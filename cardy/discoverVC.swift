@@ -14,6 +14,11 @@ class discoverVC: UIViewController {
     
     @IBOutlet weak var companyLabel: UILabel!
     
+    @IBOutlet weak var timsLabel: UILabel!
+    
+    
+    @IBOutlet weak var timsDistanceLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +43,10 @@ class discoverVC: UIViewController {
             }, withCancelBlock: { error in
                 print(error.description)
         })
+        UIView.animateWithDuration(1.0, delay: 1.0, options: [], animations: {
+            print("test bitch")
+            }, completion: nil)
         
-        
-    }
+    }//viewDidLoad end
     
-}
+}//end end
